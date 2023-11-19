@@ -17,13 +17,13 @@ class Manejador():
 
 	def definirAtomico(self, nombre, representacion, alineacion):
 		if nombre in self.atomicos or nombre in self.structs or nombre in self.uniones:
-			raise ExcepcionManejador(f"Redeclaracion del tipo '{nombre}'")
+			raise ExcepcionManejador(f"Redeclaración del tipo '{nombre}'")
 		
 		self.atomicos[nombre] = Atomico(nombre, representacion, alineacion)
 
 	def definirStruct(self, nombre, *tipo):
 		if nombre in self.atomicos or nombre in self.structs or nombre in self.uniones:
-			raise ExcepcionManejador(f"Redeclaracion del tipo '{nombre}'")
+			raise ExcepcionManejador(f"Redeclaración del tipo '{nombre}'")
 		tipo = list(tipo)
 		for i in range(len(tipo)):
 			t = tipo[i]
@@ -40,7 +40,7 @@ class Manejador():
 
 	def definirUnion(self, nombre, *tipo):
 		if nombre in self.atomicos or nombre in self.structs or nombre in self.uniones:
-			raise ExcepcionManejador(f"Redeclaracion del tipo '{nombre}'")
+			raise ExcepcionManejador(f"Redeclaración del tipo '{nombre}'")
 		tipo = list(tipo)
 		for i in range(len(tipo)):
 			t = tipo[i]
